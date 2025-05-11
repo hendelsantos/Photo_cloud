@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="mb-3">Perfil de {{ user }}</h3>
+<div>
+    {% for album in user_albums %}
+        <div class="mb-3">
+            <strong>{{ album }}</strong>: {{ album_counts[album] }} foto(s)
+            <a href="/download/{{ album }}" class="btn btn-sm btn-outline-success ms-2">📦 Baixar álbum</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

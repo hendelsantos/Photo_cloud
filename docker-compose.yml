@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  photocloud:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./static/uploads:/app/static/uploads
+      - ./comments:/app/comments
+      - ./users.json:/app/users.json
+    environment:
+      - PYTHONUNBUFFERED=1

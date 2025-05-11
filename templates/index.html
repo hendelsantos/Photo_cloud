@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Álbuns</h2>
+{% for album, photos in albums.items() %}
+    <div class="mb-4">
+        <h5>{{ album }}</h5>
+        <div class="d-flex flex-wrap gap-2">
+            {% for photo in photos %}
+                <a href="/photo/{{ album }}/{{ photo }}">
+                    <img src="/static/uploads/{{ album }}/{{ photo }}" alt="{{ photo }}" class="rounded shadow" style="height: 120px;">
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

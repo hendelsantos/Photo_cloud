@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+    <h4 class="mb-3">Foto: {{ filename }}</h4>
+    <img src="/static/uploads/{{ album }}/{{ filename }}" class="img-fluid rounded shadow" style="max-height: 500px;" alt="Foto">
+    {% if user and (user == "admin" or user in filename) %}
+    <div class="mt-3">
+        <a href="/delete/{{ album }}/{{ filename }}" class="btn btn-danger">🗑 Apagar Foto</a>
+    </div>
+    {% endif %}
+</div>
+
+<div class="mt-5">
+    <h5>Comentários</h5>
+    {% for comment in comments %}
+        <div class="mb-2"><strong>{{ comment.name }}:</strong> {{ comment.message }}</div>
+    {% endfor %}
+    <form method="post" action="/comment/{{ album }}/{{ filename }}">
+        <div class="mb-3">
+            <textarea name="message" class="form-control" placeholder="Adicione um comentário..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Comentar</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h3 class="mb-3">Upload de Fotos</h3>
+    <form method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <input type="text" name="album" class="form-control" placeholder="Nome do Álbum" required>
+      </div>
+      <div class="mb-3">
+        <select name="visibility" class="form-select">
+          <option value="public">Público</option>
+          <option value="private">Privado</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <input type="file" name="files" multiple class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
