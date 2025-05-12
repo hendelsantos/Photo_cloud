@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.9"
 
 services:
   photocloud:
@@ -6,8 +6,5 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./static/uploads:/app/static/uploads
-      - ./comments:/app/comments
-      - ./users.json:/app/users.json
-    environment:
-      - PYTHONUNBUFFERED=1
+      - .:/app
+    restart: always

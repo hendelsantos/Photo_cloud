@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria - PhotoCloud</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>PhotoCloud</h1>
+    </header>
+
+    <main>
+        <div class="upload-bar">
+            <p class="aviso">AVISO: AS FOTOS SERÃO DELETADAS EM 24 HORAS</p>
+            <p class="contador">Já foram postadas <strong>{{ total_count }}</strong> fotos</p>
+            <a href="/" class="botao-upload">📤 Enviar nova foto</a>
+        </div>
+
+        <div class="galeria-grid">
+            {% for photo in photos %}
+            <div class="card">
+                <img src="/static/uploads/{{ photo.filename }}" alt="Foto">
+                <div class="info">
+                    <p><strong>Usuário:</strong> {{ photo.user_name }}</p>
+                    <p><strong>Álbum:</strong> {{ photo.album }}</p>
+                    <form action="/delete/{{ photo.id }}" method="post">
+                        <button class="excluir" type="submit">Excluir</button>
+                    </form>
+                    <a href="/static/uploads/{{ photo.filename }}" download class="download-btn">Baixar Foto</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Feito por Hendel</p>
+    </footer>
+</body>
+</html>

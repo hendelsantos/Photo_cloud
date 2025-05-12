@@ -1,23 +1,33 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-6">
-    <h3 class="mb-3">Upload de Fotos</h3>
-    <form method="post" enctype="multipart/form-data">
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card p-4 shadow-lg bg-dark text-white" style="width: 100%; max-width: 500px;">
+    
+    <div class="d-flex justify-content-between mb-3">
+      <h4 class="mb-0">Enviar Foto</h4>
+      <a href="/galeria" class="btn btn-outline-info btn-sm">Ver Galeria</a>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" action="/upload">
       <div class="mb-3">
-        <input type="text" name="album" class="form-control" placeholder="Nome do Álbum" required>
+        <label for="user_name" class="form-label">Seu nome</label>
+        <input type="text" class="form-control bg-secondary text-white border-0" name="user_name" required>
       </div>
       <div class="mb-3">
-        <select name="visibility" class="form-select">
-          <option value="public">Público</option>
-          <option value="private">Privado</option>
-        </select>
+        <label for="album" class="form-label">Nome do álbum</label>
+        <input type="text" class="form-control bg-secondary text-white border-0" name="album" required>
       </div>
       <div class="mb-3">
-        <input type="file" name="files" multiple class="form-control" required>
+        <label for="files" class="form-label">Selecionar fotos</label>
+        <input type="file" class="form-control bg-secondary text-white border-0" name="files" multiple required>
       </div>
       <button type="submit" class="btn btn-primary w-100">Enviar</button>
     </form>
+
+    <div class="mt-3 text-center">
+      <small class="text-muted">As fotos serão apagadas automaticamente em 24 horas.</small>
+    </div>
   </div>
 </div>
 {% endblock %}

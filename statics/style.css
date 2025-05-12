@@ -1,0 +1,125 @@
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+main {
+    padding: 20px;
+}
+
+.upload-bar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.aviso {
+    color: yellow;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contador {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.botao-upload {
+    background-color: #00bcd4;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.botao-upload:hover {
+    background-color: #0097a7;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: 0 0 10px #00000060;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info {
+    margin-top: 10px;
+    font-size: 0.95em;
+    text-align: center;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+.excluir {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.3s;
+}
+
+.excluir:hover {
+    background-color: #c0392b;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 14px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px 10px;
+    font-size: 0.9em;
+    color: #aaaaaa;
+    margin-top: 40px;
+}

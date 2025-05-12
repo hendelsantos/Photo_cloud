@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Galeria de Fotos</h2>
+<p class="contador">Já foram postadas {{ total_photos }} fotos</p>
+<p class="aviso">As fotos são armazenadas por 24 horas e depois deletadas automaticamente.</p>
+<div class="galeria">
+  {% for photo in photos %}
+    <div class="foto">
+        <a href="/static/uploads/{{ photo.filename }}" target="_blank">
+            <img src="/static/uploads/{{ photo.filename }}" alt="foto">
+        </a>
+        <p><strong>Enviado por:</strong> {{ photo.user_name }}</p>
+    </div>
+  {% endfor %}
+</div>
+<a href="/">Voltar</a>
+{% endblock %}

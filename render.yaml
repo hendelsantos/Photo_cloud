@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: photocloud
+    env: docker
+    repo: https://github.com/hendelsantos/Photo_cloud
+    branch: main
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+    plan: free

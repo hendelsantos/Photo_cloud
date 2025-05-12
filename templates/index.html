@@ -1,16 +1,22 @@
-{% extends "base.html" %}
-{% block content %}
-<h2 class="text-center mb-4">Álbuns</h2>
-{% for album, photos in albums.items() %}
-    <div class="mb-4">
-        <h5>{{ album }}</h5>
-        <div class="d-flex flex-wrap gap-2">
-            {% for photo in photos %}
-                <a href="/photo/{{ album }}/{{ photo }}">
-                    <img src="/static/uploads/{{ album }}/{{ photo }}" alt="{{ photo }}" class="rounded shadow" style="height: 120px;">
-                </a>
-            {% endfor %}
-        </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhotoCloud - Galeria</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Galeria de Álbuns</h1>
+        {% for album, fotos in albums.items() %}
+            <div class="album">
+                <h2>{{ album }}</h2>
+                <div class="photos">
+                    {% for foto in fotos %}
+                        <img src="/static/uploads/{{ album }}/{{ foto }}" alt="{{ foto }}">
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
-{% endblock %}
+</body>
+</html>
